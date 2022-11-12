@@ -6,6 +6,7 @@ namespace LinkedListProgram
 {
     internal class Node
     {
+
         public int data;
         public Node next;
 
