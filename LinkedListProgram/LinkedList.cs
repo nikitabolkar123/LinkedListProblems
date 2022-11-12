@@ -59,13 +59,26 @@ namespace LinkedListProgram
             }
             return head;
         }
-        public void DeleteFirstNode()
+        public int DeleteLastNode()
         {
-            if (head != null)
+            Node temp = this.head;
+            if (this.head == null)
             {
-                head = head.next;
-                Console.WriteLine("\nFirst element deleted");
+                Console.WriteLine("LinkedList id empty");
+                return 0;
             }
+            if (this.head.next == null)
+            {
+                this.head = null;
+                return 0;
+            }
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            int delNode = temp.next.data;
+            temp.next = null;
+            return delNode;
         }
 
         public void Display()
@@ -88,5 +101,3 @@ namespace LinkedListProgram
         }
     }
 }
-
-
