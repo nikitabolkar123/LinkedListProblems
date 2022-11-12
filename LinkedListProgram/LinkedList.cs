@@ -7,35 +7,47 @@ namespace LinkedListProgram
     internal class LinkedList
     {
         internal Node head;
-        internal void Add(int data)
+        internal void AddLast(int data)
         {
-            Node node = new Node(data);
+            Node Node = new Node(data);
             if (this.head == null)
             {
-                this.head = node;
+                this.head = Node;
             }
             else
             {
-                Node temp = head;
+                Node temp = this.head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
                 }
-                temp.next = node;
+                temp.next = Node;
             }
-            Console.WriteLine("Inserted into Linked List :  {0}", node.data);
+            Console.WriteLine("{0} is inserted into LinkedList", Node.data);
         }
-        internal void Display()
+        internal void AddFirst(int data)
         {
+            Node Node = new Node(data);
+            Node.next = this.head;
+            this.head = Node;
+            Console.WriteLine("{0} is inserted into LinkedList", Node.data);
+        }
+        public void Display()
+        {
+            Console.WriteLine("Displaying Nodes:");
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine(" Linked List is Empty ");
+                Console.WriteLine("LinkedList is Empty");
+                return;
             }
-            while (temp != null)
+            else
             {
-                Console.WriteLine(temp.data + " ");
-                temp = temp.next;
+                while (temp != null)
+                {
+                    Console.Write(" " + temp.data + " ");
+                    temp = temp.next;
+                }
             }
         }
     }
