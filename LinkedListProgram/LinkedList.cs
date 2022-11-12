@@ -6,7 +6,6 @@ namespace LinkedListProgram
 {
     internal class LinkedList
     {
-
         internal Node head;
         internal void Add(int data)
         {
@@ -124,5 +123,7 @@ namespace LinkedListProgram
             }
             return null;
         }
+
     }
 }
+
